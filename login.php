@@ -34,8 +34,27 @@ if($idpengguna == 'admin'){
         $stmt->bind_param('s',$idpengguna);
         $stmt->execute();
         $stmt->store_result();
-        if($stmt->num_rows(){
-            $stmt->bind_result($id
+        if($stmt->num_rows){
+            $stmt->bind_result($idcustomer, $kata);
+            $stmt->fetch();
+            if(password_verify($katalaluan, $kata)){
+                $_SESSION['idcustomer']=$idcustomer;
+                header('location: customer/');
+            }else{
+                gagal();
+            }
+        }else{
+            gagal();
         }
     }
+}
+
+function gagal()
+{
+    ?>
+    <script>
+        alert('Maaf, ID pengguna/kata laluan salah.');
+        window.location = './';
+    </script>
+<?php
 }

@@ -1,6 +1,6 @@
 <?php
-require ('../conn.php');
-if (!isset($_SESSION['idcustomer'])) header('location:../');
+require '../conn.php';
+if (!isset($_SESSION['idcustomer'])) header('location: ../');
 $idcustomer = $_SESSION['idcustomer'];
 $sql = "SELECT cust_name FROM customer WHERE idcustomer = ?";
 $stmt = $conn->prepare($sql);
@@ -21,6 +21,9 @@ $stmt->fetch();
 </head>
 
 <body>
+    <h3>
+        <?php echo "Selamat Datang $cust_name"; ?>
+    </h3>
     <form action="login.php" method="post">
         <label for="idpengguna">ID Pengguna</label>
         <input type="text" name="idpengguna" id="idpengguna">
