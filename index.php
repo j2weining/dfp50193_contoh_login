@@ -1,15 +1,3 @@
-<?php
-require '../conn.php';
-if (!isset($_SESSION['idcustomer'])) header('location: ../');
-$idcustomer = $_SESSION['idcustomer'];
-$sql = "SELECT cust_name FROM customer WHERE idcustomer = ?";
-$stmt = $conn->prepare($sql);
-$stmt->bind_param('i', $idcustomer);
-$stmt->execute();
-$stmt->store_result();
-$stmt->bind_result($cust_name);
-$stmt->fetch();
-?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -21,12 +9,10 @@ $stmt->fetch();
 </head>
 
 <body>
-    <h3>
-        <?php echo "Selamat Datang $cust_name"; ?>
-    </h3>
     <form action="login.php" method="post">
         <label for="idpengguna">ID Pengguna</label>
         <input type="text" name="idpengguna" id="idpengguna">
+        <p></p>
         <label for="katalaluan">Kata Laluan</label>
         <input type="password" name="katalaluan" id="katalaluan">
         <button type="submit">MASUK</button>
