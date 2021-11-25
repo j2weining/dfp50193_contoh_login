@@ -20,6 +20,11 @@ require 'conn.php';
         <input type="password" name="katalaluan" id="katalaluan">
         <button type="submit">MASUK</button>
     </form>
+    <?php
+    echo"<br>";
+    $pswd = password_hash('chai',PASSWORD_BCRYPT);
+    echo $pswd;
+    ?>
 </body>
 
 </html>

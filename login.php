@@ -8,7 +8,6 @@ if($idpengguna == 'admin'){
     $sql = 'SELECT * FROM admin';
     $row = $conn -> query($sql)->fetch_object();
     if(password_verify($katalaluan, $row->katalaluan)){
-        $pswd = password_hash($katalaluan,PASSWORD_BCRYPT);
         $_SESSION['idpengguna'] = 'admin';
         header('location: admin/');
     }else{
