@@ -1,7 +1,7 @@
 <?php
 require '../conn.php';
 if (!isset($_SESSION['idstaff'])) header('location: ../');
-$idcustomer = $_SESSION['idcustomer'];
+$idstaff = $_SESSION['idstaff'];
 $sql = "SELECT staff_name FROM staff WHERE idstaff = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param('i', $idstaff);
@@ -16,11 +16,12 @@ $stmt->fetch();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer</title>
+    <title>Staff</title>
 </head>
 <body>
     <h3>
         <?php echo "Selamat Datang $staff_name"; ?>
+        <p><a href="../logout.php">Logout</a></p>
     </h3>
 </body>
 </html>
