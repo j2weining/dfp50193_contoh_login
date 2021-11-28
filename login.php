@@ -20,10 +20,10 @@ if($idpengguna == 'admin'){
     $stmt->execute();
     $stmt->store_result();
     if($stmt->num_rows){
-        $stmt->bind_result($idstaff,$kata);
+        $stmt->bind_result($idstaff, $kata);
         $stmt->fetch();
         if(password_verify($katalaluan, $kata)){
-            $_SESSION['idstaff'] =$idstaff;
+            $_SESSION['idstaff'] = $idstaff;
             header('location: staff/');
         }else{
             gagal();

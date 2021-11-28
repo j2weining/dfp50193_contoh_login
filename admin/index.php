@@ -30,6 +30,7 @@ $stmt->fetch();
         <tr bgcolor="#ffd700">
             <th>ID Staff</th>
             <th>ID Pengguna</th>
+            <th>Katalaluan</th>
             <th>Staff Name</th>
             <th>Tindakan</th>
         </tr>
@@ -42,6 +43,7 @@ $stmt->fetch();
                 <tr>
                     <td><?php echo $row->idstaff; ?></td>
                     <td><?php echo $row->idpengguna; ?></td>
+                    <td><?php echo $row->katalaluan; ?></td>
                     <td><?php echo $row->staff_name; ?></td>
                     <td>
                         <a href="kemaskini.php?idstaff=<?php echo $row->idstaff; ?>">Edit</a>

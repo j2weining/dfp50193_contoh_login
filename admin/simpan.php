@@ -20,9 +20,15 @@
                     </td>
                 </tr>
                 <tr>
+                    <td><label for="katalaluan">Katalaluan</label></td>
+                    <td>
+                        <input id="katalaluan" type="text" name="katalaluan" required />
+                    </td>
+                </tr>
+                <tr>
                     <td><label for="staff_name">Staff Name</label></td>
                     <td>
-                        <input id="staff_name" type="text" name="stuff_name" required />
+                        <input id="staff_name" type="text" name="staff_name" required />
                     </td>
                 </tr>
                 <tr>

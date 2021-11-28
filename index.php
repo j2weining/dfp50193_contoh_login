@@ -12,6 +12,7 @@ require 'conn.php';
 </head>
 
 <body>
+    <h1>Login</h1>
     <form action="login.php" method="post">
         <label for="idpengguna">ID Pengguna</label>
         <input type="text" name="idpengguna" id="idpengguna">
@@ -20,9 +21,12 @@ require 'conn.php';
         <input type="password" name="katalaluan" id="katalaluan">
         <button type="submit">MASUK</button>
     </form>
+    <br>
+    <a href="register.php?">Register</a>
     <?php
-    echo"<br>";
-    $pswd = password_hash('chai',PASSWORD_BCRYPT);
+    echo "<br>";
+    echo "<p></p>";
+    $pswd = password_hash('denis123',PASSWORD_BCRYPT);
     echo $pswd;
     ?>
 </body>
