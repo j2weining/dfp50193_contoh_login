@@ -21,7 +21,7 @@
             <tr>
                 <td><label for="katalaluan">Katalaluan</label></td>
                 <td>
-                    <input id="katalaluan" type="text" name="katalaluan" required />
+                    <input id="katalaluan" type="password" name="katalaluan" required />
                 </td>
             </tr>
             <tr>

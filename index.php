@@ -26,7 +26,7 @@ require 'conn.php';
     <?php
     echo "<br>";
     echo "<p></p>";
-    $pswd = password_hash('denis123',PASSWORD_BCRYPT);
+    $pswd = password_hash('abu123',PASSWORD_BCRYPT);
     echo $pswd;
     ?>
 </body>

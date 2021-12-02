@@ -1,19 +1,18 @@
 <?php
 require '../conn.php';
 
-$idpengguna = $_POST['idpengguna'];
+$idstaff = $_POST['idstaff'];
 $katalaluan = password_hash('abc123', PASSWORD_BCRYPT);
-$staffname = $_POST['staff_name'];
 
-$sql = "INSERT INTO staff (idpengguna, katalaluan, staff_name) VALUES (?, ?, ?)";
+$sql = "UPDATE staff SET katalaluan = ? WHERE idstaff = ?";
 $stmt = $conn->prepare($sql);
-$stmt->bind_param('sss', $idpengguna, $katalaluan, $staffname);
+$stmt->bind_param('si', $katalaluan, $idstaff);
 $stmt->execute();
 
 if ($conn->error) {
 ?>
     <script>
-        alert('Maaf! Gagal menyimpan data');
+        alert('Maaf! Katalaluan');
         window.location = 'index.php';
     </script>
 <?php

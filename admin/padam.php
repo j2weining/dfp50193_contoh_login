@@ -1,7 +1,7 @@
 <?php
-require 'conn.php';
+require '../conn.php';
 
-$idmakananbasah = $_GET['idstaff'];
+$idstaff = $_GET['idstaff'];
 
 $sql = "DELETE FROM staff WHERE idstaff = ?";
 $stmt = $conn->prepare($sql);
